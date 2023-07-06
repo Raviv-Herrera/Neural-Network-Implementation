@@ -1,5 +1,5 @@
 # Neural-Network-Implementation
-An implementation from scratch (no tf or torch) of fully conected NN 
+An implementation from scratch (no Tensorflow or pytorch) of fully conected NN 
 
 ## Description
 In this project I present my own implementation of a fully conected NN and using it on MNIST benchmark dataset.
