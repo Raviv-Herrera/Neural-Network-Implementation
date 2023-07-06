@@ -11,4 +11,5 @@ There is an option to increase the original dataset by augmentation methods, pro
 
 I hope you find my implementation useful. 
 
+![](https://github.com/Raviv-Herrera/Rigid-Body-Transformation/blob/main/NN_gif.gif)
 
