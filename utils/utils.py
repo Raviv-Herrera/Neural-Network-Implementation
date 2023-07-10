@@ -15,6 +15,7 @@ np.random.seed(0)
 def preprocess_mnist_dataset(is_augmentation: bool):
     """
     This function preprocesses the mnist dataset in purpose to fit the first layer of the CNN.
+    :param is_augmentation: (bool) , a flag that indicates whether to use augmentation or not 
     :return:
     """
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -42,15 +43,15 @@ def preprocess_mnist_dataset(is_augmentation: bool):
 
 
 def plot_combined_results(loss_lists: list, accuracy_lists: list, opt_names: list, ep_lists: list,
-                          val_accuracy_lists: list, lr: float):
+                          val_accuracy_lists: list, lr: float) -> None:
     """
-
-    :param lr:
-    :param loss_lists:
-    :param accuracy_lists:
-    :param opt_names:
-    :param ep_lists:
-    :param val_accuracy_lists:
+    This function plots the final results of the training phase
+    :param lr: (float) Learning rate 
+    :param loss_lists: (List) List of lists , each list holds the loss values during the training phase
+    :param accuracy_lists: (List) List of lists , each list holds the accuracy values during the training phase
+    :param opt_names: (List) List, containing the names of the optimizers
+    :param ep_lists: (List) List of the epochs 
+    :param val_accuracy_lists: (List) List of lists , each list holds the accuracy values of the validation set during the training phase
     :return:
     """
     colors = ['r', 'b', 'k', 'g', 'yellow']
@@ -84,14 +85,11 @@ def plot_combined_results(loss_lists: list, accuracy_lists: list, opt_names: lis
     fig1.savefig(f'accuracy_{lr}.png')
 
 
-def augment_dataset(X_train: np.ndarray, y_train: np.ndarray) -> Tuple:
-
-    return augmentation(X=X_train, y=y_train)
+def augment_dataset(X_train: np.ndarray, y_train: np.ndarray) -> Tuple: return augmentation(X=X_train, y=y_train)
 
 
 def augmentation(X: np.ndarray, y: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
     """
-
     :param X:
     :param y:
     :return:
